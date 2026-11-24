@@ -119,7 +119,8 @@ class _StartState extends State<Start> {
                     height: 50 + MediaQuery.of(context).padding.bottom,
                     padding: EdgeInsets.only(
                         top: 5,
-                        bottom: MediaQuery.of(context).padding.bottom - 10),
+                        bottom: (MediaQuery.of(context).padding.bottom - 10)
+                            .clamp(0.0, double.infinity)),
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.3), // 透明度
                       border: const Border(

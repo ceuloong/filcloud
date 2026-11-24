@@ -40,5 +40,9 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+    # 新版 Xcode 要求最低 15.0；部分 Pod 仍自带 9/12/13，统一抬高避免 Target Integrity 失败
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+    end
   end
 end

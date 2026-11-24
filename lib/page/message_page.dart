@@ -222,7 +222,8 @@ class _MessagePageState extends State<MessagePage> {
               width: double.infinity,
               height: MediaQuery.of(context).padding.top + 40,
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).padding.top - 10),
+                  top: (MediaQuery.of(context).padding.top - 10)
+                      .clamp(0.0, double.infinity)),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.3), // 透明度
                 border: const Border(
